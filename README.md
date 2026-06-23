@@ -1,6 +1,6 @@
 # TSort RC Firmware Yocto Builder
 
-This repository contains the build environment setup and custom Yocto recipes (`meta-rcfirmware`) to build the RC firmware image for the Intel N150 processor. 
+This repository contains the build environment setup and custom Yocto recipes (`meta-rcfirmware`) to build the tSort Robot Controller (RC) firmware image for the Beelink MiniPC S13 Pro. 
 
 To keep the repository clean, large downloaded dependencies like Yocto/Poky, Meta-OpenEmbedded, and Meta-ROS are ignored by Git. A setup script is provided to fetch these dependencies automatically.
 
@@ -28,7 +28,7 @@ source poky/oe-init-build-env build-n150
 ```
 
 ### 4. Build
-You can now build the firmware image (replace `rcfirmware` with your target image name if different):
+You can now build the firmware image:
 
 ```bash
 bitbake rcfirmware
@@ -36,6 +36,6 @@ bitbake rcfirmware
 
 ## Repository Structure & Custom Settings
 
-- `custom-conf/`: Contains your custom configuration files (`local.conf` and `bblayers.conf`). The `local.conf` is pre-configured specifically for targeting the **Intel N150 processor** and contains all specific tweaks necessary for this project. These files are automatically copied into the `build-n150/conf/` directory by the `setup_project.sh` script.
-- `meta-rcfirmware/`: Contains your custom Yocto recipes for the RC firmware. This is explicitly tracked by the repository so you can version control your specific software components.
+- `custom-conf/`: Contains custom configuration files (`local.conf` and `bblayers.conf`). The `local.conf` is pre-configured specifically for targeting the **Intel N150 processor** and contains all specific tweaks necessary for this project. These files are automatically copied into the `build-n150/conf/` directory by the `setup_project.sh` script.
+- `meta-rcfirmware/`: Contains custom Yocto recipes for the tSort RC firmware. This is explicitly tracked by the repository.
 - `setup_project.sh`: Fetches dependencies and wires up the `custom-conf` to the downloaded Poky environment.

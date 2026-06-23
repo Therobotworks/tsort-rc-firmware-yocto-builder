@@ -1,0 +1,15 @@
+[Unit]
+Description=Mustang Ignition ROS 2 Launch
+After=network.target
+
+[Service]
+Type=simple
+User=mustang
+# Replicating your override.conf groups:
+SupplementaryGroups=dialout video plugdev
+# Execute your bash wrapper script
+ExecStart=/bin/bash /etc/robot_boot/setup_robot.bash
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

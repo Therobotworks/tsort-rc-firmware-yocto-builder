@@ -1,0 +1,14 @@
+# Ignore downloaded Yocto sources
+poky/
+meta-openembedded/
+meta-ros/
+
+# Ignore Yocto build directory
+build-n150/
+
+# Ignore IDE specific files
+.vscode/
+
+# Ignore python cache files
+__pycache__/
+*.pyc

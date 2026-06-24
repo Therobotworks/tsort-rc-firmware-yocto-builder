@@ -24,6 +24,7 @@ clone_and_checkout() {
 
 # Clone required repositories with their specific commits
 clone_and_checkout "git://git.yoctoproject.org/poky.git" "poky" "scarthgap" "b56134ff90dec996e8aae45ed7e6ad6b1d5a84a0"
+clone_and_checkout "git://git.yoctoproject.org/meta-intel.git" "poky/meta-intel" "scarthgap" "5d153e35b4e752505efeae368f188fac5e31cf33"
 clone_and_checkout "git://git.openembedded.org/meta-openembedded" "meta-openembedded" "scarthgap" "d8cc4e44001c7257273d290ce8c4496e93d32841"
 clone_and_checkout "https://github.com/ros/meta-ros.git" "meta-ros" "scarthgap" "faba0b8658b1c2416f2380cd1671daa60ced6481"
 
@@ -44,4 +45,4 @@ echo "Setup complete!"
 echo "To start building, activate the environment by running:"
 echo "  source poky/oe-init-build-env build-n150"
 echo "Then run bitbake with your recipe, e.g.:"
-echo "  bitbake rcfirmware"
+echo "  bitbake rcfirmware-image"

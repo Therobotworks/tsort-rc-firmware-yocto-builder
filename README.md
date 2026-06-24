@@ -1,6 +1,6 @@
-# TSort RC Firmware Yocto Builder
+# tSort Robot Controller (RC) Firmware Yocto Builder
 
-This repository contains the build environment setup and custom Yocto recipes (`meta-rcfirmware`) to build the tSort Robot Controller (RC) firmware image for the Beelink MiniPC S13 Pro. 
+This repository contains the build environment setup and custom Yocto recipes (`meta-rcfirmware`) to build the tsort-rc-firmware image for the Beelink MiniPC S13 Pro. 
 
 To keep the repository clean, large downloaded dependencies like Yocto/Poky, Meta-OpenEmbedded, and Meta-ROS are ignored by Git. A setup script is provided to fetch these dependencies automatically.
 
@@ -28,10 +28,10 @@ source poky/oe-init-build-env build-n150
 ```
 
 ### 4. Build
-You can now build the firmware image:
+You can now build the firmware image, this may take a few hours depending on internet connection and computer performance:
 
 ```bash
-bitbake rcfirmware
+bitbake rcfirmware-image
 ```
 
 ## Repository Structure & Custom Settings

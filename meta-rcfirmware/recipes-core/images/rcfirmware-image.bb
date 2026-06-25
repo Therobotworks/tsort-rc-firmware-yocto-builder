@@ -3,11 +3,9 @@ LICENSE = "CLOSED"
 
 require recipes-core/images/ros-image-core.bb
 
-#Generate an ISO image (Standard format for x86_64 live USB installers)
-IMAGE_FSTYPES += "iso wic"
+# Generate a WIC image for flashing to SD/eMMC
+IMAGE_FSTYPES += "wic"
 
-# Specify the initramfs to handle the live boot and installation process
-INITRD_IMAGE = "core-image-minimal-initramfs"
 
 # Enable SSH server
 IMAGE_FEATURES += "ssh-server-openssh"
@@ -37,13 +35,12 @@ IMAGE_INSTALL:append = " \
     tsort-rc-firmware-py \
     mustang-ignition \
     sudo \
-    linux-firmware-iwlwifi \
     iw \
     mustang-network \
     kernel-module-uvcvideo \
     kernel-module-cdc-acm \
-    kernel-module-iwlwifi \
-    kernel-module-iwlmvm \
+    firmware-nxp-wifi-nxp8997-pcie \
+    kernel-module-nxp-wlan \
     systemd \
     \
     parted \

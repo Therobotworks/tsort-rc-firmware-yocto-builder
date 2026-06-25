@@ -1,0 +1,5 @@
+[Match]
+OriginalName=mlan* uap* wfd*
+
+[Link]
+NamePolicy=keep kernel

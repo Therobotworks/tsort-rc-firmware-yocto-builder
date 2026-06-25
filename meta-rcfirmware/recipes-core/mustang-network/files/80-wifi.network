@@ -1,5 +1,5 @@
 [Match]
-Name=wl*
+Name=mlan* wlan*
 
 [Network]
 DHCP=yes

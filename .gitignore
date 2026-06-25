@@ -5,6 +5,7 @@ meta-ros/
 
 # Ignore Yocto build directory
 build-n150/
+build-imx8mplus/
 
 # Ignore IDE specific files
 .vscode/

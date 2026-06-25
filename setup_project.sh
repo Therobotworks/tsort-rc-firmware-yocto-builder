@@ -24,25 +24,25 @@ clone_and_checkout() {
 
 # Clone required repositories with their specific commits
 clone_and_checkout "git://git.yoctoproject.org/poky.git" "poky" "scarthgap" "b56134ff90dec996e8aae45ed7e6ad6b1d5a84a0"
-clone_and_checkout "git://git.yoctoproject.org/meta-intel.git" "poky/meta-intel" "scarthgap" "5d153e35b4e752505efeae368f188fac5e31cf33"
+clone_and_checkout "https://git.yoctoproject.org/git/meta-freescale" "poky/meta-freescale" "scarthgap" "HEAD"
 clone_and_checkout "git://git.openembedded.org/meta-openembedded" "meta-openembedded" "scarthgap" "d8cc4e44001c7257273d290ce8c4496e93d32841"
 clone_and_checkout "https://github.com/ros/meta-ros.git" "meta-ros" "scarthgap" "faba0b8658b1c2416f2380cd1671daa60ced6481"
 
 # Setup the build environment
 echo "Initializing the build environment..."
-source poky/oe-init-build-env build-n150
+source poky/oe-init-build-env build-imx8mplus
 
 # Return to the root directory
 cd ..
 
 # Copy custom configurations
 echo "Copying custom configurations..."
-cp custom-conf/local.conf build-n150/conf/local.conf
-cp custom-conf/bblayers.conf build-n150/conf/bblayers.conf
+cp custom-conf/local.conf build-imx8mplus/conf/local.conf
+cp custom-conf/bblayers.conf build-imx8mplus/conf/bblayers.conf
 
 echo ""
 echo "Setup complete!"
 echo "To start building, activate the environment by running:"
-echo "  source poky/oe-init-build-env build-n150"
+echo "  source poky/oe-init-build-env build-imx8mplus"
 echo "Then run bitbake with your recipe, e.g.:"
 echo "  bitbake rcfirmware-image"
